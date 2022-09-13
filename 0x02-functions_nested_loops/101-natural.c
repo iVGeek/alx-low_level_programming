@@ -1,43 +1,22 @@
 #include <stdio.h>
-
 /**
+ * main - main function
  *
- *  * main - main function
- *
- *   *
- *
- *    * Return: always 0
- *
- *     */
-
+ * Return: always 0
+ */
 int main(void)
-
 {
+	int a;
+	int b = 0;
 
-		int a;
+	for (a = 0; a < 1024; a++)
+	{
+		if (a % 3 == 0 || a % 5 == 0)
+		{
+			b += a;
+		}
 
-			int b = 0;
-
-
-
-				for (a = 0; a < 1024; a++)
-
-						{
-
-									if (a % 3 == 0 || a % 5 == 0)
-
-												{
-
-																b += a;
-
-																		}
-
-
-
-										}
-
-					printf("%d\n", b);
-
-						return (0);
-
+	}
+	printf("%d\n", b);
+	return (0);
 }
