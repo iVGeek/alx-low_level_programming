@@ -1,12 +1,12 @@
-#include "mainn.h"
+#include "main.h"
 /**
  * main - Entry point
- * Description: prints 'Holberton \n'
+ * Description: prints 'main \n'
  * Return: Always 0 (success)
  */
 int main(void)
 {
-char str[] = "Holberton\n";
+char str[] = "main\n";
 int i = 0;
 
 while (str[i] != '\0')
