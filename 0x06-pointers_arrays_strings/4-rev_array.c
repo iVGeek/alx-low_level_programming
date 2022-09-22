@@ -17,5 +17,3 @@ void reverse_array(int *a, int n)
 		a[index] = tmp;
 	}
 }
-Footer
-© 2022 Git
