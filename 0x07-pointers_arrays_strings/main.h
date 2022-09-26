@@ -1,24 +1,49 @@
-#ifndef MAIN_H
-#define MAIN_H
+#include "main.h"
+#include <stdio.h>
 
 /**
- * File: main.h
- * Auth: iVGeek
- * Desc: Header file containing prototypes for all functions
- *       used in the 0x07-pointers_arrays_strings directory.
- */
+ * simple_print_buffer - prints buffer in hexa
+ * @buffer: the address of memory to print
+ * @size: the size of the memory to print
+ *
+ * Return: Nothing.
+*/
 
-#include <stddef.h>
+void simple_print_buffer(char *buffer, unsigned int size)
+{
+	unsigned int i;
 
-int _putchar(char c);
-void *_memset(void *s, int c, size_t n);
-void *_memcpy(void *dest, const void *src, size_t n);
-char *_strchr(char *s, char c);
-unsigned int _strspn(char *s, char *accept);
-char *_strpbrk(char *s, char *accept);
-char *_strstr(char *haystack, char *needle);
-void print_chessboard(char (*a)[8]);
-void print_diagsums(int *a, int size);
-void set_string(char **s, char *to);
+	i = 0;
+	while (i < size)
+	{
+		if (i % 10)
+		{
+			printf(" ");
+		}
+		if (!(i % 10) && i)
+		{
+			printf("\n");
+		}
+		printf("0x%02x", buffer[i]);
+		i++;
+	}
+	printf("\n");
+}
 
-#endif
+
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: Always 0.
+*/
+
+int main(void)
+{
+	char buffer[98] = {0x00};
+
+	simple_print_buffer(buffer, 98);
+	_memset(buffer, 0x01, 95);
+	printf("-------------------------------------------------\n");
+	simple_print_buffer(buffer, 98);
+	return (0);
+}
