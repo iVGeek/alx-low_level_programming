@@ -1,16 +1,4 @@
-#
-*/
-
-voi 
-
-
-/**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
-*/
-
- #ifndef MAIN_H
+#ifndef MAIN_H
 #define MAIN_H
 
 /**
