@@ -1,65 +1,85 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include "main.h"
+
+
+
+
+
 
 /**
- * calculate_cents - calculates and return cents
- * @num: input params
- * Return: coins
+ * coin_count - counts the min coins needed for change
+ *
+ * @argv: argument vector
+ * @count: int to count coins
+ * Return: int
  */
-
-int calculate_cents(int num)
+int coin_count(char *argv[], int count)
 {
-	int coins = 0;
+int sum = 0;
 
-	while (num)
-	{
-		if (num >= 25)
-		{
-			num -= 25;
-		}
-		else if (num >= 10)
-		{
-			num -= 10;
-		}
-		else if (num >= 5)
-		{
-			num -= 5;
-		}
-		else if (num >= 2)
-		{
-			num -= 2;
-		}
-		else if (num >= 1)
-		{
-			num -= 1;
-		}
-		coins++;
-	}
-	return (coins);
+while (!(sum + 25 > atoi(argv[1])))
+{
+sum += 25;
+count++;
+}
+while (!(sum + 10 > atoi(argv[1])))
+{
+sum += 10;
+count++;
+}
+while (!(sum + 5 > atoi(argv[1])))
+{
+sum += 5;
+count++;
+}
+while (!(sum + 2 > atoi(argv[1])))
+{
+sum += 2;
+count++;
+}
+while (!(sum + 1 > atoi(argv[1])))
+{
+sum += 1;
+count++;
+}
+return (count);
 }
 
+
+
+
+
+
+
+
 /**
- * main - prints the minimum number of
- * coins to make change for an amount of money
- * @argc: amount of arguement
- * @argv: an array of inputs from argc
+ * main - prints the min num of coins to make change for an amount of money
  *
- * Return: 0 for success
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: int
  */
+
+
+
+
 
 int main(int argc, char *argv[])
 {
-	int number;
+int count = 0;
 
-	if (argc != 2)
-	{
-		return (printf("Error\n"), 1);
-	}
-	number = atoi(argv[1]);
-	if (number < 0)
-	{
-		return (printf("Error\n"), 1);
-	}
-	printf("%d\n", calculate_cents(number));
-	return (0);
+if (argc != 2)
+{
+printf("Error\n");
+return (1);
+}
+else if (atoi(argv[1]) < 0)
+{
+printf("%d\n", 0);
+return (0);
+}
+count = coin_count(argv, count);
+printf("%d\n", count);
+return (0);
 }
