@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "main.h"
+#include "holberton.h"
 
 
 
@@ -80,6 +80,6 @@ printf("%d\n", 0);
 return (0);
 }
 count = coin_count(argv, count);
-printf("%d\n", calculate_cents(number));
+printf("%d\n", count);
 return (0);
 }
