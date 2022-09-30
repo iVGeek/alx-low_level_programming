@@ -80,6 +80,6 @@ printf("%d\n", 0);
 return (0);
 }
 count = coin_count(argv, count);
-printf("%d\n", count);
+printf("%d\n", calculate_cents(number));
 return (0);
 }
