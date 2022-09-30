@@ -1,85 +1,51 @@
-#include <stdlib.h>
+#include "main.h"
 #include <stdio.h>
-#include "holberton.h"
-
-
-
-
-
-
+#include <stdlib.h>
+#include <string.h>
 /**
- * coin_count - counts the min coins needed for change
- *
- * @argv: argument vector
- * @count: int to count coins
- * Return: int
+ * main - main function
+ * @argc: argumentc
+ * @argv: vector of arguments
+ *Return: always 0
  */
-int coin_count(char *argv[], int count)
+int main(int argc, char  *argv[])
 {
-int sum = 0;
+	int coins = 0;
 
-while (!(sum + 25 > atoi(argv[1])))
-{
-sum += 25;
-count++;
-}
-while (!(sum + 10 > atoi(argv[1])))
-{
-sum += 10;
-count++;
-}
-while (!(sum + 5 > atoi(argv[1])))
-{
-sum += 5;
-count++;
-}
-while (!(sum + 2 > atoi(argv[1])))
-{
-sum += 2;
-count++;
-}
-while (!(sum + 1 > atoi(argv[1])))
-{
-sum += 1;
-count++;
-}
-return (count);
-}
+	if (argc == 2)
+	{
+		if (strchr(argv[argc - 1], '-'))
+		{
+			printf("0\n");
+			return (1);
+		}
+		int money;
 
+		money = atoi(argv[argc - 1]);
 
-
-
-
-
-
-
-/**
- * main - prints the min num of coins to make change for an amount of money
- *
- * @argc: argument count
- * @argv: argument vector
- * Return: int
- */
-
-
-
-
-
-int main(int argc, char *argv[])
-{
-int count = 0;
-
-if (argc != 2)
-{
-printf("Error\n");
-return (1);
-}
-else if (atoi(argv[1]) < 0)
-{
-printf("%d\n", 0);
-return (0);
-}
-count = coin_count(argv, count);
-printf("%d\n", count);
-return (0);
+		while (money > 0)
+		{
+			if (money % 25 == 0)
+			{
+				money -= 25;
+			} else if (money % 10 == 0)
+			{
+				money -= 10;
+			} else if (money % 5 == 0)
+			{
+				money -= 5;
+			} else if (money % 2 == 0)
+			{
+				money -= 2;
+			} else
+			{
+				money--;
+			}
+			coins++;
+		}
+		printf("%d\n", coins);
+		return (0);
+	}
+	printf("Error\n");
+	return (1);
 }
