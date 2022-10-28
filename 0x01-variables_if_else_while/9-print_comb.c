@@ -1,25 +1,26 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+/* more headers goes there */
+
+/* betty style doc for function main goes there */
 /**
- * main - main block
- * Description: prints all single digit numbers of base 10
- * starting from 0, followed by a new line.
- * Return: 0
+ * main - The program entry point.
+ * Return: 0 if everything happened well. other int otherwise.
  */
 int main(void)
 {
-	int c = 0;
+	int i;
 
-	while (c < 10)
+	for (i = 48; i < 58; i++)
 	{
-		putchar(48 + c);
-		if (c != 9)
+		putchar(i);
+		if (i < 57)
 		{
-			putchar(',');
-			putchar(' ');
+			putchar(44);
+			putchar(32);
 		}
-		c++;
 	}
-	putchar('\n');
+	putchar(10);
 	return (0);
 }
