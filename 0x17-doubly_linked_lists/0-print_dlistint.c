@@ -1,30 +1,26 @@
-#include <stdio.h>
+/*
+ * File: 0-print_dlistint.c
+ * Auth:iVGeek
+ */
+
 #include "lists.h"
 
 /**
- * print_dlistint -  a function
- * @h: the head of list
+ * print_dlistint - Prints all the elements of a dlistint_t list.
+ * @h: The head of the dlistint_t list.
  *
- * Return: number element of the link list
+ * Return: The number of nodes in the list.
  */
-
 size_t print_dlistint(const dlistint_t *h)
 {
-	size_t nb = 0;
+	size_t nodes = 0;
 
-	if (h == NULL)
-		return (0);
-
-	if (h->prev != NULL)
-		while (h->prev != NULL)
-			h = h->prev;
-
-	while (h != NULL)
+	while (h)
 	{
-		printf("%d \n", h->n);
-		nb++;
+		nodes++;
+		printf("%d\n", h->n);
 		h = h->next;
 	}
 
-	return (nb);
+	return (nodes);
 }
