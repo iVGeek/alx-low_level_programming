@@ -1,18 +1,21 @@
-#include <stdio.h>
-#include "lists.h"
-#include <stdlib.h>
-
-/**
- * add_dnodeint_end -  a function
- * @head: the head of list
- * @n: the number of noeud
- *
- * Return: the node
+/*
+ * File: 3-add_dnodeint_end.c
+ * Auth: iVGeek
  */
 
+#include "lists.h"
+
+/**
+ * add_dnodeint_end - Adds a new node at the end of a dlistint_t list.
+ * @head: A pointer to the head of the dlistint_t list.
+ * @n: The integer for the new node to contain.
+ *
+ * Return: If the function fails - NULL.
+ *         Otherwise - the address of the new node.
+ */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *new, *ptr = *head;
+	dlistint_t *new, *last;
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
@@ -21,18 +24,18 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	new->n = n;
 	new->next = NULL;
 
-	if (ptr == NULL)
+	if (*head == NULL)
 	{
 		new->prev = NULL;
 		*head = new;
-		return (*head);
+		return (new);
 	}
 
-	while (ptr->next != NULL)
-		ptr = ptr->next;
-
-	ptr->next = new;
-	new->prev = ptr;
+	last = *head;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
+	new->prev = last;
 
 	return (new);
 }
