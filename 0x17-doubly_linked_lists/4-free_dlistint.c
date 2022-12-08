@@ -1,26 +1,22 @@
-#include <stdio.h>
-#include <stdlib.h>
+/*
+ * File: 4-free_dlistint.c
+ * Auth: iVGeek
+ */
+
 #include "lists.h"
 
 /**
- * free_dlistint -  a function
- * @head: the head of list
- *
- * Return: number element of the link list
+ * free_dlistint - Frees a linked dlistint_t list.
+ * @head: The head of the dlistint_t list.
  */
-
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *ptr, *tmp;
+	dlistint_t *tmp;
 
-	while (head->prev != NULL)
-		head = head->prev;
-
-	ptr = head;
-	while (ptr != NULL)
+	while (head)
 	{
-		tmp = ptr;
-		ptr = ptr->next;
-		free(tmp);
+		tmp = head->next;
+		free(head);
+		head = tmp;
 	}
 }
