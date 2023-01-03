@@ -7,6 +7,6 @@ This repo is just a summary to:
 * Language: C
 * OS: Ubuntu 20.04 LTS
 
-## Author :🦩:
+## Author 🦊:
 
 [GitHub](https://github.com/iVGeek)|iVGeek
