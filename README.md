@@ -1,10 +1,10 @@
-# alx-low_level_programming :☕:
+# alx-low_level_programming :lion:
 This repo is just a summary to:
 
 -Why  programming is awesome
 
 ### Environment
-* Language: Python, C, Shell
+* Language: C
 * OS: Ubuntu 20.04 LTS
 
 ## Author :🦩:
